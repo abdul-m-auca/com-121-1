@@ -727,6 +727,6 @@ extern int __overflow (FILE *, int);
 
 # 3 "01.c"
 int main()
-{ puts("hello, world");
+{puts ("hello,world");
 return 0;
 }

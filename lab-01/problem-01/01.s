@@ -1,28 +1,25 @@
 	.file	"01.c"
 	.text
-	.section	.rodata
+	.section	.rodata.str1.1,"aMS",@progbits,1
 .LC0:
-	.string	"hello, world"
+	.string	"hello,world"
 	.text
 	.globl	main
 	.type	main, @function
 main:
-.LFB0:
+.LFB23:
 	.cfi_startproc
 	endbr64
-	pushq	%rbp
+	subq	$8, %rsp
 	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
 	leaq	.LC0(%rip), %rdi
 	call	puts@PLT
 	movl	$0, %eax
-	popq	%rbp
-	.cfi_def_cfa 7, 8
+	addq	$8, %rsp
+	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
-.LFE0:
+.LFE23:
 	.size	main, .-main
 	.ident	"GCC: (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0"
 	.section	.note.GNU-stack,"",@progbits
